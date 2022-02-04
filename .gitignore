@@ -22,3 +22,10 @@ IMG
 driving_log.csv
 Archive.zip
 sdc.app
+
+# Logs
+/Logs
+*.log
+
+# Build
+build/
