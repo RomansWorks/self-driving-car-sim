@@ -1,3 +1,13 @@
+
+# NOTE
+
+This is a private fork of the original repository of the [Self Driving Car Simulator](https://github.com/udacity/self-driving-car-sim/)
+
+The fork has been reimported with Unity 2021.2.10 after applying the fixes at https://github.com/udacity/self-driving-car-sim/pull/134. 
+
+No warranty, but have fun :)
+
+
 ## Welcome to Udacity's Self-Driving Car Simulator 
 
 This simulator was built for [Udacity's Self-Driving Car Nanodegree](https://udacity.com/drive), to teach students how to train cars how to navigate road courses using deep learning. See more [project details here](https://github.com/udacity/CarND-Behavioral-Cloning-P3).
