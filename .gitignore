@@ -26,3 +26,12 @@ sdc.app
 # Code editors
 .vscode
 tags
+
+
+# Log files
+*.log
+Logs/
+
+# Generated app
+*.app/
+
