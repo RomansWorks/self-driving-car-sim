@@ -304,15 +304,17 @@ namespace SocketIO
 			#if SOCKET_IO_DEBUG
 			debugMethod.Invoke("[SocketIO] " + packet);
 			#endif
-			
-			try {
+
+			#pragma warning disable CS0168 // Variable is declared but never used
+            try {
 				ws.Send(encoder.Encode(packet));
 			} catch(SocketIOException ex) {
 				#if SOCKET_IO_DEBUG
 				debugMethod.Invoke(ex.ToString());
 				#endif
 			}
-		}
+#pragma warning restore CS0168 // Variable is declared but never used
+        }
 
 		private void OnOpen(object sender, EventArgs e)
 		{
@@ -396,7 +398,9 @@ namespace SocketIO
 		{
 			if (!handlers.ContainsKey(ev.name)) { return; }
 			foreach (Action<SocketIOEvent> handler in this.handlers[ev.name]) {
-				try{
+				#pragma warning disable CS0168 // Variable is declared but never used
+                try
+                {
 					handler(ev);
 				} catch(Exception ex){
 					#if SOCKET_IO_DEBUG

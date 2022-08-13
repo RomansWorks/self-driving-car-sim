@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class ReturnToMainMenu : MonoBehaviour
@@ -10,10 +11,10 @@ public class ReturnToMainMenu : MonoBehaviour
     public void Start()
     {
         DontDestroyOnLoad(this);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-
-    private void OnLevelWasLoaded(int level)
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         m_Levelloaded = true;
     }
@@ -35,5 +36,10 @@ public class ReturnToMainMenu : MonoBehaviour
     {
         Debug.Log("going back to main menu");
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
